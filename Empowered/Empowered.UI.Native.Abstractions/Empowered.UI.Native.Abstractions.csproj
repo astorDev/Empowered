@@ -4,4 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Empowered.UI.Native\Empowered.UI.Native.csproj" />
+  </ItemGroup>
+
 </Project>

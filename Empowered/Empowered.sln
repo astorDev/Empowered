@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.UI.Native.Abstractions", "Empowered.UI.Native.Abstractions\Empowered.UI.Native.Abstractions.csproj", "{8AE29237-37E6-44EE-BC3F-835187411568}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.UI.Native.Xamarin", "Empowered.UI.Native.Xamarin\Empowered.UI.Native.Xamarin.csproj", "{623B5D9A-2B69-4C03-9D68-983E46BEF9B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.UI.Native.XForms", "Empowered.UI.Native.Xamarin\Empowered.UI.Native.XForms.csproj", "{623B5D9A-2B69-4C03-9D68-983E46BEF9B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.UI.Native.Wpf", "Empowered.UI.Native.Wpf\Empowered.UI.Native.Wpf.csproj", "{6519792D-AD5B-44B4-B0B6-182F23E73D38}"
 EndProject
