@@ -6,7 +6,7 @@ namespace Empowered.UI.Native.XForms.Navigation
 	/// Viewmodel-page associatons required
 	/// for <see cref="Navigator"/> to open correct pages.
 	/// This interface is app-specific. 
-	/// Typicall realization is class inheiriting from <see cref="NavigationBindings"/>
+	/// Typical implementation is class inheiriting from <see cref="NavigationBindings"/>
 	/// </summary>
 	public interface INavigationBindings
 	{

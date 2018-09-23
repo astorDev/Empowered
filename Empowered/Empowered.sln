@@ -11,9 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.UI.Native.Wpf", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.UI.Native", "Empowered.UI.Native\Empowered.UI.Native.csproj", "{9F997E91-7ABF-4334-81FF-41D2331950E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.UI", "Empowered.UI\Empowered.UI.csproj", "{694D5158-6B82-4553-9723-DA99AE7B0DC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.UI", "Empowered.UI\Empowered.UI.csproj", "{694D5158-6B82-4553-9723-DA99AE7B0DC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.Packs", "Empowered.Packs\Empowered.Packs.csproj", "{BB138375-6FD5-4D28-AF83-BE4827552777}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.Packs", "Empowered.Packs\Empowered.Packs.csproj", "{BB138375-6FD5-4D28-AF83-BE4827552777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.DependencyInjection", "Empowered.DependencyInjection\Empowered.DependencyInjection.csproj", "{DE207492-BF69-4E83-958F-E18F5C60ABE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.DependencyInjection.Ninject", "Empowered.DependencyInjection.Ninject\Empowered.DependencyInjection.Ninject.csproj", "{3A11DAC1-B86A-4013-AD07-84DC69DB2EC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{BB138375-6FD5-4D28-AF83-BE4827552777}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB138375-6FD5-4D28-AF83-BE4827552777}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB138375-6FD5-4D28-AF83-BE4827552777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE207492-BF69-4E83-958F-E18F5C60ABE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE207492-BF69-4E83-958F-E18F5C60ABE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE207492-BF69-4E83-958F-E18F5C60ABE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE207492-BF69-4E83-958F-E18F5C60ABE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A11DAC1-B86A-4013-AD07-84DC69DB2EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A11DAC1-B86A-4013-AD07-84DC69DB2EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A11DAC1-B86A-4013-AD07-84DC69DB2EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A11DAC1-B86A-4013-AD07-84DC69DB2EC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,13 +6,10 @@
 
   <ItemGroup>
     <PackageReference Include="Ninject" Version="3.3.4" />
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.561731" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Empowered.DependencyInjection.Ninject\Empowered.DependencyInjection.Ninject.csproj" />
     <ProjectReference Include="..\Empowered.DependencyInjection\Empowered.DependencyInjection.csproj" />
-    <ProjectReference Include="..\Empowered.UI.Native.Abstractions\Empowered.UI.Native.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
