@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.UI.Native.Abstractions", "Empowered.UI.Native.Abstractions\Empowered.UI.Native.Abstractions.csproj", "{8AE29237-37E6-44EE-BC3F-835187411568}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.UI.Native.Abstractions", "Empowered.UI.Native.Abstractions\Empowered.UI.Native.Abstractions.csproj", "{8AE29237-37E6-44EE-BC3F-835187411568}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.UI.Native.XForms", "Empowered.UI.Native.Xamarin\Empowered.UI.Native.XForms.csproj", "{623B5D9A-2B69-4C03-9D68-983E46BEF9B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.UI.Native.XForms", "Empowered.UI.Native.Xamarin\Empowered.UI.Native.XForms.csproj", "{623B5D9A-2B69-4C03-9D68-983E46BEF9B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.UI.Native.Wpf", "Empowered.UI.Native.Wpf\Empowered.UI.Native.Wpf.csproj", "{6519792D-AD5B-44B4-B0B6-182F23E73D38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.UI.Native", "Empowered.UI.Native\Empowered.UI.Native.csproj", "{9F997E91-7ABF-4334-81FF-41D2331950E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.UI.Native", "Empowered.UI.Native\Empowered.UI.Native.csproj", "{9F997E91-7ABF-4334-81FF-41D2331950E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.UI", "Empowered.UI\Empowered.UI.csproj", "{694D5158-6B82-4553-9723-DA99AE7B0DC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.Packs", "Empowered.Packs\Empowered.Packs.csproj", "{BB138375-6FD5-4D28-AF83-BE4827552777}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{9F997E91-7ABF-4334-81FF-41D2331950E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F997E91-7ABF-4334-81FF-41D2331950E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F997E91-7ABF-4334-81FF-41D2331950E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694D5158-6B82-4553-9723-DA99AE7B0DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694D5158-6B82-4553-9723-DA99AE7B0DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694D5158-6B82-4553-9723-DA99AE7B0DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694D5158-6B82-4553-9723-DA99AE7B0DC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB138375-6FD5-4D28-AF83-BE4827552777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB138375-6FD5-4D28-AF83-BE4827552777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB138375-6FD5-4D28-AF83-BE4827552777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB138375-6FD5-4D28-AF83-BE4827552777}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
