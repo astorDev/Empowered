@@ -11,7 +11,7 @@ namespace Empowered.DependencyInjection.Ninject
 	public abstract class NinjectedApplicationBuilder<TBuilder> : InitializedApplicationBuilder<IKernel> where TBuilder : NinjectedApplicationBuilder<TBuilder>
 	{
 		/// <summary>
-		/// Configured kernel
+		/// <see cref="IKernel"/> being configured
 		/// </summary>
 		public IKernel Kernel => this.Provider;
 

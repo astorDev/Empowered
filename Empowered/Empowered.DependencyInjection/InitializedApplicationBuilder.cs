@@ -21,7 +21,6 @@ namespace Empowered.ApplicationConfiguration
 		/// from previous <see cref="ApplicationBuilder"/> passing turn with required <see cref="IServiceProvider"/>
 		/// </summary>
 		/// <param name="builder"></param>
-		/// <param name="turn"></param>
 		public InitializedApplicationBuilder(ApplicationBuilder builder)
 		{
 			this.chainedServiceProvider = builder.chainedServiceProvider;

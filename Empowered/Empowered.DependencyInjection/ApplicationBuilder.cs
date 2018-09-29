@@ -12,6 +12,14 @@ namespace Empowered.ApplicationConfiguration
 		internal object nextProvider;
 
 		/// <summary>
+		/// Creates new <see cref="ApplicationBuilder"/>
+		/// which should be used as starting point for dependency injection based app configuration
+		/// </summary>
+		public ApplicationBuilder()
+		{
+		}
+
+		/// <summary>
 		/// Starts dependency injection building
 		/// with initial <see cref="IServiceProvider"/>
 		/// </summary>
@@ -24,11 +32,13 @@ namespace Empowered.ApplicationConfiguration
 		}
 
 		/// <summary>
-		/// Passes building to specified
+		/// Passes application building to specified <typeparamref name="TBuilder"/>
+		/// created by <paramref name="factoryMethod"/> utilizing specified <typeparamref name="TProvider"/>
 		/// </summary>
 		/// <typeparam name="TBuilder"></typeparam>
 		/// <typeparam name="TProvider"></typeparam>
 		/// <param name="provider"></param>
+		/// <param name="factoryMethod"></param>
 		/// <returns></returns>
 		public virtual TBuilder UseSubcontractor<TBuilder, TProvider>(TProvider provider, Func<ApplicationBuilder, TBuilder> factoryMethod) 
 			where TProvider : IServiceProvider

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Empowered.ApplicationConfiguration
 {
+	/// <summary>
+	/// Extensions for <see cref="IServiceProvider"/>
+	/// </summary>
 	public static class IServiceProviderExtensions
 	{
 		/// <summary>

@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Empowered.ApplicationConfiguration</name>
+    </assembly>
+    <members>
+        <member name="T:Empowered.ApplicationConfiguration.ApplicationBuilder">
+            <summary>
+            Builds dependency injection 
+            with help of <see cref="T:Empowered.ApplicationConfiguration.ChainedServiceProvider"/>
+            </summary>
+        </member>
+        <member name="M:Empowered.ApplicationConfiguration.ApplicationBuilder.#ctor">
+            <summary>
+            Creates new <see cref="T:Empowered.ApplicationConfiguration.ApplicationBuilder"/>
+            which should be used as starting point for dependency injection based app configuration
+            </summary>
+        </member>
+        <member name="M:Empowered.ApplicationConfiguration.ApplicationBuilder.AddServiceProvider``1(``0)">
+            <summary>
+            Starts dependency injection building
+            with initial <see cref="T:System.IServiceProvider"/>
+            </summary>
+            <param name="serviceProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Empowered.ApplicationConfiguration.ApplicationBuilder.UseSubcontractor``2(``1,System.Func{Empowered.ApplicationConfiguration.ApplicationBuilder,``0})">
+            <summary>
+            Passes application building to specified <typeparamref name="TBuilder"/>
+            created by <paramref name="factoryMethod"/> utilizing specified <typeparamref name="TProvider"/>
+            </summary>
+            <typeparam name="TBuilder"></typeparam>
+            <typeparam name="TProvider"></typeparam>
+            <param name="provider"></param>
+            <param name="factoryMethod"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Empowered.ApplicationConfiguration.ChainedServiceProvider">
+            <summary>
+            Implementation of <see cref="T:System.IServiceProvider"/> 
+            that is collection of inner service providers.
+            <para>On <see cref="M:Empowered.ApplicationConfiguration.ChainedServiceProvider.GetService(System.Type)"/> sequentially tries to recieve service from inner providers.</para>
+            </summary>
+        </member>
+        <member name="M:Empowered.ApplicationConfiguration.ChainedServiceProvider.#ctor(System.IServiceProvider)">
+            <summary>
+            Constructs <see cref="T:Empowered.ApplicationConfiguration.ChainedServiceProvider"/>
+            with initial <see cref="T:System.IServiceProvider"/>
+            </summary>
+            <param name="firstServiceProvider"></param>
+        </member>
+        <member name="M:Empowered.ApplicationConfiguration.ChainedServiceProvider.GetService(System.Type)">
+            <summary>
+            Seeks GetService from providers in inner array
+            untill array is over or service is received.
+            </summary>
+            <param name="serviceType"></param>
+            <returns>
+            Service instance from first inner providers that can provide it
+            or null if no inner service can.
+            </returns>
+        </member>
+        <member name="T:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1">
+            <summary>
+            <see cref="T:Empowered.ApplicationConfiguration.ApplicationBuilder"/> implementation
+            ready for <see cref="T:System.IServiceProvider"/> creation
+            </summary>
+            <typeparam name="TMyProvider"></typeparam>
+        </member>
+        <member name="F:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1.Provider">
+            <summary>
+            provider for dependency injection
+            </summary>
+        </member>
+        <member name="M:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1.#ctor(Empowered.ApplicationConfiguration.ApplicationBuilder)">
+            <summary>
+            Creates <see cref="T:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1"/>
+            from previous <see cref="T:Empowered.ApplicationConfiguration.ApplicationBuilder"/> passing turn with required <see cref="T:System.IServiceProvider"/>
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="M:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1.CreateServiceProvider">
+            <summary>
+            Returns built service provider.
+            Essentially returns passed through <see cref="T:Empowered.ApplicationConfiguration.ChainedServiceProvider"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Empowered.ApplicationConfiguration.IServiceProviderExtensions">
+            <summary>
+            Extensions for <see cref="T:System.IServiceProvider"/>
+            </summary>
+        </member>
+        <member name="M:Empowered.ApplicationConfiguration.IServiceProviderExtensions.Get``1(System.IServiceProvider)">
+            <summary>
+            Retuns strongly-typed result of <see cref="M:System.IServiceProvider.GetService(System.Type)"/>
+            with null check
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="serviceProvider"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
