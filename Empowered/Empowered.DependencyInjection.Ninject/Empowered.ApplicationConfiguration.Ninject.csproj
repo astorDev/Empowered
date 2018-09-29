@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Empowered.DependencyInjection\Empowered.DependencyInjection.csproj" />
+    <ProjectReference Include="..\Empowered.DependencyInjection\Empowered.ApplicationConfiguration.csproj" />
   </ItemGroup>
 
 </Project>

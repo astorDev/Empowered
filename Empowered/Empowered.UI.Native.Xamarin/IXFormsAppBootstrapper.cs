@@ -12,9 +12,11 @@ namespace Empowered.UI.Native.XForms
 	{
 		/// <summary>
 		/// Starts xamarin forms application from page
-		/// associated with specified viewmodel
+		/// associated with specified viewmodel.
+		/// Also adds <see cref="IServiceProvider"/> to application resources
+		/// by key "ServiceProvider"
 		/// </summary>
 		/// <typeparam name="TViewModel"></typeparam>
-		void StartXFormsAppFrom<TViewModel>() where TViewModel : IViewModel;
+		void StartFrom<TViewModel>() where TViewModel : IViewModel;
 	}
 }

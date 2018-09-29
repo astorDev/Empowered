@@ -4,20 +4,21 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace Empowered.DependencyInjection
+namespace Empowered.ApplicationConfiguration
 {
 	/// <summary>
 	/// Implementation of <see cref="IServiceProvider"/> 
-	/// that sequentially tries to recieve service from inner providers.
+	/// that is collection of inner service providers.
+	/// <para>On <see cref="GetService(Type)"/> sequentially tries to recieve service from inner providers.</para>
 	/// </summary>
-	public class ChainedServiceProvider : Collection<IServiceProvider>, IServiceProvider
+	internal class ChainedServiceProvider : Collection<IServiceProvider>, IServiceProvider
 	{
 		/// <summary>
 		/// Constructs <see cref="ChainedServiceProvider"/>
 		/// with initial <see cref="IServiceProvider"/>
 		/// </summary>
 		/// <param name="firstServiceProvider"></param>
-		public ChainedServiceProvider(IServiceProvider firstServiceProvider)
+		internal ChainedServiceProvider(IServiceProvider firstServiceProvider)
 		{
 			this.Add(firstServiceProvider);
 		}
@@ -39,6 +40,7 @@ namespace Empowered.DependencyInjection
 			while(innerProviderIndex < this.Count && service == null)
 			{
 				service = this[innerProviderIndex].GetService(serviceType);
+				innerProviderIndex++;
 			}
 			 
 			return service;
