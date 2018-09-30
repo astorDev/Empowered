@@ -2,8 +2,11 @@
 using Ninject;
 using System;
 
-namespace Empowered.DependencyInjection.Ninject
+namespace Empowered.ApplicationConfiguration.Ninjecting
 {
+	/// <summary>
+	/// Extensions for fluent ninject interaction
+	/// </summary>
 	public static class NinjectApplicationBuilderExtensions
 	{
 		/// <summary>
@@ -15,9 +18,9 @@ namespace Empowered.DependencyInjection.Ninject
 		/// <returns></returns>
 		public static NinjectedApplicationBuilder StartNinjecting(this ApplicationBuilder builder)
 		{
-			IKernel kernel = new StandardKernel();
+			var wrappedKernel = new KernelServiceProviderWrapper(new StandardKernel());
 
-			return builder.UseSubcontractor(kernel, b => new NinjectedApplicationBuilder(b)); 
+			return builder.UseSubcontractor(wrappedKernel, b => new NinjectedApplicationBuilder(b)); 
 		}
 	}
 }

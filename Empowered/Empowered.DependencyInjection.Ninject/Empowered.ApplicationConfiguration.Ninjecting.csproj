@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Astor</Authors>
+    <Product>Empowered</Product>
+    <Description>Extension of Empowered.ApplicationConfiguration including fluent support for ninject modules</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\Pavlu\Source\Repos\Empowered\Empowered\Empowered.DependencyInjection.Ninject\Empowered.ApplicationConfiguration.Ninjecting.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Empowered.ApplicationConfiguration" Version="1.0.3" />
+    <PackageReference Include="Ninject" Version="3.3.4" />
+  </ItemGroup>
+
+</Project>

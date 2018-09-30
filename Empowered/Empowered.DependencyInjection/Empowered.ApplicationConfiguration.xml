@@ -76,6 +76,10 @@
             <summary>
             Creates <see cref="T:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1"/>
             from previous <see cref="T:Empowered.ApplicationConfiguration.ApplicationBuilder"/> passing turn with required <see cref="T:System.IServiceProvider"/>
+            <para></para>
+            Note: that method should only be used within 
+            <see cref="M:Empowered.ApplicationConfiguration.ApplicationBuilder.UseSubcontractor``2(``1,System.Func{Empowered.ApplicationConfiguration.ApplicationBuilder,``0})"/>
+            factory method
             </summary>
             <param name="builder"></param>
         </member>

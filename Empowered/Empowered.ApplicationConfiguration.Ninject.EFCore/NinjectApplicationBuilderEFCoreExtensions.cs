@@ -1,4 +1,4 @@
-﻿using Empowered.DependencyInjection.Ninject;
+﻿using Empowered.ApplicationConfiguration.Ninjecting;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

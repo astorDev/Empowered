@@ -1,12 +1,6 @@
-﻿using Empowered.DependencyInjection;
-using Empowered.DependencyInjection.Ninject;
-using Empowered.UI.Native.Abstractions;
+﻿using Empowered.UI.Native.Abstractions;
 using Empowered.UI.Native.XForms.Navigation;
-using Ninject;
 using Ninject.Modules;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Empowered.UI.Native.XForms
 {

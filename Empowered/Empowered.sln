@@ -17,15 +17,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.Packs", "Empowere
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.ApplicationConfiguration", "Empowered.DependencyInjection\Empowered.ApplicationConfiguration.csproj", "{DE207492-BF69-4E83-958F-E18F5C60ABE7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.ApplicationConfiguration.Ninject", "Empowered.DependencyInjection.Ninject\Empowered.ApplicationConfiguration.Ninject.csproj", "{3A11DAC1-B86A-4013-AD07-84DC69DB2EC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.ApplicationConfiguration.Ninjecting", "Empowered.DependencyInjection.Ninject\Empowered.ApplicationConfiguration.Ninjecting.csproj", "{3A11DAC1-B86A-4013-AD07-84DC69DB2EC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.EFCore", "Empowered.EFCore\Empowered.EFCore.csproj", "{1E9F35A5-0FFF-4084-80D3-1C673C9BBFB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.EFCore", "Empowered.EFCore\Empowered.EFCore.csproj", "{1E9F35A5-0FFF-4084-80D3-1C673C9BBFB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.ApplicationConfiguration.Tests", "Empowered.ApplicationBuilding.Tests\Empowered.ApplicationConfiguration.Tests.csproj", "{8E879FA5-18D9-4BFF-A685-2AABDE8D6B30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.ApplicationConfiguration.Ninjecting.EFCore", "Empowered.ApplicationConfiguration.Ninject.EFCore\Empowered.ApplicationConfiguration.Ninjecting.EFCore.csproj", "{FBF071F4-66D7-4236-9C64-F0E44FD1D948}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.ApplicationConfiguration.Ninject.EFCore", "Empowered.ApplicationConfiguration.Ninject.EFCore\Empowered.ApplicationConfiguration.Ninject.EFCore.csproj", "{FBF071F4-66D7-4236-9C64-F0E44FD1D948}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Empowered.ApplicationConfiguration.Ninjecting.XForms", "Empowered.ApplicationConfiguration.Ninject.XForms\Empowered.ApplicationConfiguration.Ninjecting.XForms.csproj", "{711AB8C0-F5F2-4689-9F84-9392370EB2B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empowered.ApplicationConfiguration.Ninject.XForms", "Empowered.ApplicationConfiguration.Ninject.XForms\Empowered.ApplicationConfiguration.Ninject.XForms.csproj", "{711AB8C0-F5F2-4689-9F84-9392370EB2B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Empowered.ApplicationConfiguration", "Tests.Empowered.ApplicationConfiguration\Tests.Empowered.ApplicationConfiguration.csproj", "{DFE6C71C-4F98-4B34-B71E-90D98A839BA8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Empowered.ApplicationConfiguration.Ninject", "Tests.Empowered.ApplicationConfiguration.Ninject\Tests.Empowered.ApplicationConfiguration.Ninject.csproj", "{AC077DA9-7616-4E16-8655-F18E2FD1CE1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,10 +71,6 @@ Global
 		{1E9F35A5-0FFF-4084-80D3-1C673C9BBFB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E9F35A5-0FFF-4084-80D3-1C673C9BBFB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E9F35A5-0FFF-4084-80D3-1C673C9BBFB3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E879FA5-18D9-4BFF-A685-2AABDE8D6B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E879FA5-18D9-4BFF-A685-2AABDE8D6B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E879FA5-18D9-4BFF-A685-2AABDE8D6B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E879FA5-18D9-4BFF-A685-2AABDE8D6B30}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FBF071F4-66D7-4236-9C64-F0E44FD1D948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FBF071F4-66D7-4236-9C64-F0E44FD1D948}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBF071F4-66D7-4236-9C64-F0E44FD1D948}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,6 +79,14 @@ Global
 		{711AB8C0-F5F2-4689-9F84-9392370EB2B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{711AB8C0-F5F2-4689-9F84-9392370EB2B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{711AB8C0-F5F2-4689-9F84-9392370EB2B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFE6C71C-4F98-4B34-B71E-90D98A839BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE6C71C-4F98-4B34-B71E-90D98A839BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFE6C71C-4F98-4B34-B71E-90D98A839BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE6C71C-4F98-4B34-B71E-90D98A839BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC077DA9-7616-4E16-8655-F18E2FD1CE1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC077DA9-7616-4E16-8655-F18E2FD1CE1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC077DA9-7616-4E16-8655-F18E2FD1CE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC077DA9-7616-4E16-8655-F18E2FD1CE1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

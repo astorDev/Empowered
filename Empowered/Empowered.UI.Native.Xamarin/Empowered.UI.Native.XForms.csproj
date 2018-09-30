@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Empowered.DependencyInjection.Ninject\Empowered.ApplicationConfiguration.Ninject.csproj" />
+    <ProjectReference Include="..\Empowered.DependencyInjection.Ninject\Empowered.ApplicationConfiguration.Ninjecting.csproj" />
     <ProjectReference Include="..\Empowered.DependencyInjection\Empowered.ApplicationConfiguration.csproj" />
     <ProjectReference Include="..\Empowered.UI.Native.Abstractions\Empowered.UI.Native.Abstractions.csproj" />
   </ItemGroup>

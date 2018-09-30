@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Empowered.DependencyInjection.Ninject\Empowered.ApplicationConfiguration.Ninject.csproj" />
+    <ProjectReference Include="..\Empowered.DependencyInjection.Ninject\Empowered.ApplicationConfiguration.Ninjecting.csproj" />
     <ProjectReference Include="..\Empowered.DependencyInjection\Empowered.ApplicationConfiguration.csproj" />
     <ProjectReference Include="..\Empowered.UI.Native.Xamarin\Empowered.UI.Native.XForms.csproj" />
   </ItemGroup>
