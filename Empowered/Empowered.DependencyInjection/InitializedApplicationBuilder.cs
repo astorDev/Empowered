@@ -32,6 +32,20 @@ namespace Empowered.ApplicationConfiguration
 		}
 
 		/// <summary>
+		/// passes application building to next <see cref="InitializedApplicationBuilder{TMyProvider}"/>
+		/// which uses same provider as this builder
+		/// </summary>
+		/// <typeparam name="TBuilder"></typeparam>
+		/// <param name="factoryMethod"></param>
+		/// <returns></returns>
+		public TBuilder UseSubcontractor<TBuilder>(Func<ApplicationBuilder, TBuilder> factoryMethod)
+			where TBuilder : InitializedApplicationBuilder<TMyProvider>
+		{
+			this.nextProvider = this.Provider;
+			return factoryMethod(this);
+		}
+
+		/// <summary>
 		/// Returns built service provider.
 		/// Essentially returns passed through <see cref="ChainedServiceProvider"/>
 		/// </summary>

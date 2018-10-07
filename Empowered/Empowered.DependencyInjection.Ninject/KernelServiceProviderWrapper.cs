@@ -27,7 +27,7 @@ namespace Empowered.ApplicationConfiguration.Ninjecting
 		}
 
 		/// <summary>
-		/// Checks <see cref="IKernel.CanResolve"/> returning null if cannot
+		/// Checks if <see cref="IKernel.CanResolve"/> returning null if cannot
 		/// then calls <see cref="IServiceProvider.GetService(Type)"/> on kernel
 		/// </summary>
 		/// <param name="serviceType"></param>

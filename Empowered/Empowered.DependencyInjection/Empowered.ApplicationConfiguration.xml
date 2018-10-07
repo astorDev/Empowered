@@ -83,6 +83,15 @@
             </summary>
             <param name="builder"></param>
         </member>
+        <member name="M:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1.UseSubcontractor``1(System.Func{Empowered.ApplicationConfiguration.ApplicationBuilder,``0})">
+            <summary>
+            passes application building to next <see cref="T:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1"/>
+            which uses same provider as this builder
+            </summary>
+            <typeparam name="TBuilder"></typeparam>
+            <param name="factoryMethod"></param>
+            <returns></returns>
+        </member>
         <member name="M:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1.CreateServiceProvider">
             <summary>
             Returns built service provider.

@@ -24,7 +24,7 @@
         </member>
         <member name="M:Empowered.ApplicationConfiguration.Ninjecting.KernelServiceProviderWrapper.GetService(System.Type)">
             <summary>
-            Checks <see cref="!:IKernel.CanResolve"/> returning null if cannot
+            Checks if <see cref="!:IKernel.CanResolve"/> returning null if cannot
             then calls <see cref="M:System.IServiceProvider.GetService(System.Type)"/> on kernel
             </summary>
             <param name="serviceType"></param>

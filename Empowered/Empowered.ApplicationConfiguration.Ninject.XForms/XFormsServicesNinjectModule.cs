@@ -2,7 +2,7 @@
 using Empowered.UI.Native.XForms.Navigation;
 using Ninject.Modules;
 
-namespace Empowered.UI.Native.XForms
+namespace Empowered.ApplicationConfiguration.Ninjecting.XForms
 {
 	/// <summary>
 	/// Ninject module that associates all ui services abstractions
@@ -14,7 +14,7 @@ namespace Empowered.UI.Native.XForms
 		/// <summary>
 		/// App-specific association of pages and viewmodels
 		/// </summary>
-		public INavigationBindings NavigationBindings;
+		public IXFormsServicesConfiguration Configuration;
 
 		/// <summary>
 		/// Creates xamarin services ninject module
@@ -22,9 +22,9 @@ namespace Empowered.UI.Native.XForms
 		/// passed as constructor arguments
 		/// </summary>
 		/// <param name="navigationBindings">App-specific implementation of <see cref="INavigationBindings"/></param>
-		public XFormsServicesNinjectModule(INavigationBindings navigationBindings)
+		public XFormsServicesNinjectModule(IXFormsServicesConfiguration configuration)
 		{
-			this.NavigationBindings = navigationBindings;
+			this.Configuration = configuration;
 		}
 
 		/// <summary>
@@ -34,8 +34,9 @@ namespace Empowered.UI.Native.XForms
 		/// </summary>
 		public override void Load()
 		{
+			this.Bind<Navigator>().ToSelf().InSingletonScope();
 			this.Bind<INavigator>().To<Navigator>().InSingletonScope();
-			this.Bind<INavigationBindings>().ToConstant(this.NavigationBindings);
+			this.Bind<INavigationBindings>().ToConstant(this.Configuration.NavigationBindings);
 		}
 	}
 
