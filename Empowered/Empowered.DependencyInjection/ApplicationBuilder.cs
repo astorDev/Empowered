@@ -3,17 +3,14 @@
 namespace Empowered.ApplicationConfiguration
 {
 	/// <summary>
-	/// Builds dependency injection 
-	/// with help of <see cref="ChainedServiceProvider"/>
+	/// Builder of dependency-injection based application. 
 	/// </summary>
 	public class ApplicationBuilder
 	{
 		internal ChainedServiceProvider chainedServiceProvider;
-		internal object nextProvider;
 
 		/// <summary>
-		/// Creates new <see cref="ApplicationBuilder"/>
-		/// which should be used as starting point for dependency injection based app configuration
+		/// Creates new <see cref="ApplicationBuilder"/>. Which is starting point of app building.
 		/// </summary>
 		public ApplicationBuilder()
 		{
@@ -28,28 +25,27 @@ namespace Empowered.ApplicationConfiguration
 		public virtual InitializedApplicationBuilder<TProvider> AddServiceProvider<TProvider>(TProvider serviceProvider)
 			where TProvider : IServiceProvider
 		{
-			return this.UseSubcontractor(serviceProvider, (builder) => new InitializedApplicationBuilder<TProvider>(builder));
+			return this.UseSubcontractor(serviceProvider, (turn) => new InitializedApplicationBuilder<TProvider>(turn));
 		}
 
 		/// <summary>
-		/// Passes application building to specified <typeparamref name="TBuilder"/>
-		/// created by <paramref name="factoryMethod"/> utilizing specified <typeparamref name="TProvider"/>
+		/// Passes application building to specified <see cref="InitializedApplicationBuilder{TProvider}"/>
+		/// adding specified <paramref name="provider"/> to providers chain
 		/// </summary>
 		/// <typeparam name="TBuilder"></typeparam>
 		/// <typeparam name="TProvider"></typeparam>
 		/// <param name="provider"></param>
 		/// <param name="factoryMethod"></param>
 		/// <returns></returns>
-		public virtual TBuilder UseSubcontractor<TBuilder, TProvider>(TProvider provider, Func<ApplicationBuilder, TBuilder> factoryMethod) 
+		public TBuilder UseSubcontractor<TBuilder, TProvider>(TProvider provider, Func<ApplicationBuildingTurn<TProvider>, TBuilder> factoryMethod) 
 			where TProvider : IServiceProvider
 			where TBuilder : InitializedApplicationBuilder<TProvider>
 		{
-			this.addProviderToChain(provider);
-			this.nextProvider = provider;
-			return factoryMethod(this);
+			this.AddProviderToChain(provider);
+			return factoryMethod(new ApplicationBuildingTurn<TProvider>(this.chainedServiceProvider, provider));
 		}
 
-		internal virtual void addProviderToChain(IServiceProvider serviceProvider)
+		internal virtual void AddProviderToChain(IServiceProvider serviceProvider)
 		{
 			this.chainedServiceProvider = new ChainedServiceProvider(serviceProvider);
 		}

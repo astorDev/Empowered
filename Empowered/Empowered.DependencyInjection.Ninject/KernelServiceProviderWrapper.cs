@@ -7,8 +7,7 @@ namespace Empowered.ApplicationConfiguration.Ninjecting
 {
 	/// <summary>
 	/// Wrapper over <see cref="IKernel"/>
-	/// eliminating exceptions in <see cref="GetService(Type)"/>
-	/// by returning null when kernel cannot resolve type
+	/// eliminating resolvment exception
 	/// </summary>
 	public class KernelServiceProviderWrapper : IServiceProvider
 	{
@@ -27,8 +26,8 @@ namespace Empowered.ApplicationConfiguration.Ninjecting
 		}
 
 		/// <summary>
-		/// Checks if <see cref="IKernel.CanResolve"/> returning null if cannot
-		/// then calls <see cref="IServiceProvider.GetService(Type)"/> on kernel
+		/// Tries <see cref="IServiceProvider.GetService(Type)"/> from kernel.
+		/// Returns null if cannot.
 		/// </summary>
 		/// <param name="serviceType"></param>
 		/// <returns></returns>

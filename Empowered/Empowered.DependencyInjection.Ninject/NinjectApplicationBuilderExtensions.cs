@@ -10,9 +10,7 @@ namespace Empowered.ApplicationConfiguration.Ninjecting
 	public static class NinjectApplicationBuilderExtensions
 	{
 		/// <summary>
-		/// Adds <see cref="IKernel"/> to service providers chain
-		/// and returns <see cref="NinjectedApplicationBuilder"/>
-		/// for ninject-based dependency injection. 
+		/// Passed application building to <see cref="NinjectedApplicationBuilder"/> 
 		/// </summary>
 		/// <param name="builder"></param>
 		/// <returns></returns>
@@ -20,7 +18,7 @@ namespace Empowered.ApplicationConfiguration.Ninjecting
 		{
 			var wrappedKernel = new KernelServiceProviderWrapper(new StandardKernel());
 
-			return builder.UseSubcontractor(wrappedKernel, b => new NinjectedApplicationBuilder(b)); 
+			return builder.UseSubcontractor(wrappedKernel, turn => new NinjectedApplicationBuilder(turn)); 
 		}
 	}
 }

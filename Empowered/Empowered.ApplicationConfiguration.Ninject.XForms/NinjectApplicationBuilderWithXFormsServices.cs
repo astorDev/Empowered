@@ -10,7 +10,8 @@ namespace Empowered.ApplicationConfiguration.Ninjecting.XForms
 	{
 		protected override NinjectApplicationBuilderWithXFormsServices Self => this;
 
-		protected internal NinjectApplicationBuilderWithXFormsServices(ApplicationBuilder builder) : base(builder)
+		protected internal NinjectApplicationBuilderWithXFormsServices(ApplicationBuildingTurn<KernelServiceProviderWrapper> turn) 
+			: base(turn)
 		{
 		}
 

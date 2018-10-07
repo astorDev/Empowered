@@ -8,46 +8,40 @@ namespace Empowered.ApplicationConfiguration
 	/// <see cref="ApplicationBuilder"/> implementation
 	/// ready for <see cref="IServiceProvider"/> creation
 	/// </summary>
-	/// <typeparam name="TMyProvider"></typeparam>
-	public class InitializedApplicationBuilder<TMyProvider> : ApplicationBuilder where TMyProvider : IServiceProvider
+	/// <typeparam name="TProvider"></typeparam>
+	public class InitializedApplicationBuilder<TProvider> : ApplicationBuilder where TProvider : IServiceProvider
 	{
 		/// <summary>
 		/// provider for dependency injection
 		/// </summary>
-		protected readonly TMyProvider Provider;
+		protected readonly TProvider Provider;
 
 		/// <summary>
 		/// Creates <see cref="InitializedApplicationBuilder{TMyProvider}"/>
-		/// from previous <see cref="ApplicationBuilder"/> passing turn with required <see cref="IServiceProvider"/>
-		/// <para></para>
-		/// Note: that method should only be used within 
-		/// <see cref="ApplicationBuilder.UseSubcontractor{TBuilder, TProvider}(TProvider, System.Func{ApplicationBuilder, TBuilder})"/>
-		/// factory method
+		/// inside of <see cref="ApplicationBuilder.UseSubcontractor{TBuilder, TProvider}(TProvider, Func{ApplicationBuildingTurn{TProvider}, TBuilder})"/> factoryMethod
 		/// </summary>
 		/// <param name="builder"></param>
-		internal protected InitializedApplicationBuilder(ApplicationBuilder builder)
+		internal protected InitializedApplicationBuilder(ApplicationBuildingTurn<TProvider> myTurn)
 		{
-			this.chainedServiceProvider = builder.chainedServiceProvider;
-			this.Provider = (TMyProvider)builder.nextProvider;
+			this.chainedServiceProvider = myTurn.ChainedProvider;
+			this.Provider = myTurn.TurnProvider;
 		}
 
 		/// <summary>
-		/// passes application building to next <see cref="InitializedApplicationBuilder{TMyProvider}"/>
+		/// Passes application building to next <see cref="InitializedApplicationBuilder{TMyProvider}"/>
 		/// which uses same provider as this builder
 		/// </summary>
 		/// <typeparam name="TBuilder"></typeparam>
 		/// <param name="factoryMethod"></param>
 		/// <returns></returns>
-		public TBuilder UseSubcontractor<TBuilder>(Func<ApplicationBuilder, TBuilder> factoryMethod)
-			where TBuilder : InitializedApplicationBuilder<TMyProvider>
+		public TBuilder UseSubcontractor<TBuilder>(Func<ApplicationBuildingTurn<TProvider>, TBuilder> factoryMethod)
+			where TBuilder : InitializedApplicationBuilder<TProvider>
 		{
-			this.nextProvider = this.Provider;
-			return factoryMethod(this);
+			return factoryMethod(new ApplicationBuildingTurn<TProvider>(this.chainedServiceProvider, this.Provider));
 		}
 
 		/// <summary>
-		/// Returns built service provider.
-		/// Essentially returns passed through <see cref="ChainedServiceProvider"/>
+		/// Returns service provider chaining all configured inner providers
 		/// </summary>
 		/// <returns></returns>
 		public IServiceProvider CreateServiceProvider()
@@ -55,7 +49,7 @@ namespace Empowered.ApplicationConfiguration
 			return this.chainedServiceProvider;
 		}
 
-		internal sealed override void addProviderToChain(IServiceProvider serviceProvider)
+		internal sealed override void AddProviderToChain(IServiceProvider serviceProvider)
 		{
 			this.chainedServiceProvider.Add(serviceProvider);
 		}

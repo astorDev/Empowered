@@ -21,7 +21,7 @@ namespace Empowered.ApplicationConfiguration.Ninjecting.XForms
 			where TBuilder : NinjectedApplicationBuilder<TBuilder>
 		{
 			builder.Add(new XFormsServicesNinjectModule(servicesConfiguration));
-			return builder.UseSubcontractor(b => new NinjectApplicationBuilderWithXFormsServices(b));
+			return builder.UseSubcontractor(turn => new NinjectApplicationBuilderWithXFormsServices(turn));
 		}
 	}
 }
