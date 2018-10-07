@@ -8,7 +8,9 @@ namespace Empowered.ApplicationConfiguration.Ninject.EFCore
 {
 	public static class NinjectApplicationBuilderEFCoreExtensions
 	{
-		public static NinjectedApplicationBuilder<TBuilder> UseAndMigrate<TDbContext, TBuilder>(NinjectedApplicationBuilder<TBuilder> builder, Func<DbContextOptionsBuilder<TDbContext>, DbContextOptionsBuilder<TDbContext>> optionsConfiguration)
+		public static NinjectedApplicationBuilder<TBuilder> UseAndMigrate<TDbContext, TBuilder>
+			(this NinjectedApplicationBuilder<TBuilder> builder, Func<DbContextOptionsBuilder<TDbContext>
+				, DbContextOptionsBuilder<TDbContext>> optionsConfiguration)
 			where TBuilder : NinjectedApplicationBuilder<TBuilder>
 			where TDbContext : DbContext
 		{

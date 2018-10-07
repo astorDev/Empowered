@@ -5,9 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Empowered.ApplicationConfiguration.Ninjecting" Version="1.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Empowered.DependencyInjection.Ninject\Empowered.ApplicationConfiguration.Ninjecting.csproj" />
   </ItemGroup>
 
 </Project>
