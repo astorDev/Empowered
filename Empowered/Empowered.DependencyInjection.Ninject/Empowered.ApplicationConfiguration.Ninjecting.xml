@@ -7,8 +7,7 @@
         <member name="T:Empowered.ApplicationConfiguration.Ninjecting.KernelServiceProviderWrapper">
             <summary>
             Wrapper over <see cref="T:Ninject.IKernel"/>
-            eliminating exceptions in <see cref="M:Empowered.ApplicationConfiguration.Ninjecting.KernelServiceProviderWrapper.GetService(System.Type)"/>
-            by returning null when kernel cannot resolve type
+            eliminating resolvment exception
             </summary>
         </member>
         <member name="F:Empowered.ApplicationConfiguration.Ninjecting.KernelServiceProviderWrapper.Kernel">
@@ -24,8 +23,8 @@
         </member>
         <member name="M:Empowered.ApplicationConfiguration.Ninjecting.KernelServiceProviderWrapper.GetService(System.Type)">
             <summary>
-            Checks if <see cref="!:IKernel.CanResolve"/> returning null if cannot
-            then calls <see cref="M:System.IServiceProvider.GetService(System.Type)"/> on kernel
+            Tries <see cref="M:System.IServiceProvider.GetService(System.Type)"/> from kernel.
+            Returns null if cannot.
             </summary>
             <param name="serviceType"></param>
             <returns></returns>
@@ -37,44 +36,9 @@
         </member>
         <member name="M:Empowered.ApplicationConfiguration.Ninjecting.NinjectApplicationBuilderExtensions.StartNinjecting(Empowered.ApplicationConfiguration.ApplicationBuilder)">
             <summary>
-            Adds <see cref="T:Ninject.IKernel"/> to service providers chain
-            and returns <see cref="T:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder"/>
-            for ninject-based dependency injection. 
+            Passed application building to <see cref="T:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder"/> 
             </summary>
             <param name="builder"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder`1">
-            <summary>
-            Base generic <see cref="T:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1"/>
-            which supports use of ninject.
-            </summary>
-        </member>
-        <member name="P:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder`1.Kernel">
-            <summary>
-            <see cref="T:Ninject.IKernel"/> being configured
-            </summary>
-        </member>
-        <member name="P:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder`1.Self">
-            <summary>
-            Should be overriden to return this
-            </summary>
-        </member>
-        <member name="M:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder`1.#ctor(Empowered.ApplicationConfiguration.ApplicationBuilder)">
-            <summary>
-            Creates new <see cref="T:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder`1"/>
-            <para></para>
-            Note: that method should only be used within 
-            <see cref="M:Empowered.ApplicationConfiguration.ApplicationBuilder.UseSubcontractor``2(``1,System.Func{Empowered.ApplicationConfiguration.ApplicationBuilder,``0})"/>
-            factory method
-            </summary>
-            <param name="builder"></param>
-        </member>
-        <member name="M:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder`1.Add(Ninject.Modules.INinjectModule)">
-            <summary>
-            Loads specified module to manipulated <see cref="T:Ninject.IKernel"/>
-            </summary>
-            <param name="module"></param>
             <returns></returns>
         </member>
         <member name="T:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder">
@@ -87,6 +51,34 @@
             <summary>
             Returns this
             </summary>
+        </member>
+        <member name="T:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder`1">
+            <summary>
+            <see cref="T:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1"/> supporting ninject.
+            </summary>
+        </member>
+        <member name="P:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder`1.Kernel">
+            <summary>
+            <see cref="T:Ninject.IKernel"/> being configured
+            </summary>
+        </member>
+        <member name="P:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder`1.Self">
+            <summary>
+            Should be overriden to return this
+            </summary>
+        </member>
+        <member name="M:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder`1.#ctor(Empowered.ApplicationConfiguration.ApplicationBuildingTurn{Empowered.ApplicationConfiguration.Ninjecting.KernelServiceProviderWrapper})">
+            <summary>
+            Creates new <see cref="T:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder`1"/>
+            </summary>
+            <param name="turn"></param>
+        </member>
+        <member name="M:Empowered.ApplicationConfiguration.Ninjecting.NinjectedApplicationBuilder`1.Add(Ninject.Modules.INinjectModule)">
+            <summary>
+            Loads specified module to manipulated <see cref="T:Ninject.IKernel"/>
+            </summary>
+            <param name="module"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

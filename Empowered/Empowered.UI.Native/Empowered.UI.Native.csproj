@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Astor</Authors>
+    <Product>Empowered</Product>
+    <Description>Basic native ui classes</Description>
   </PropertyGroup>
 
 </Project>

@@ -5,6 +5,7 @@
     <Authors>Astor</Authors>
     <Product>Empowered</Product>
     <Description>Extension of Empowered.ApplicationConfiguration including fluent support for ninject modules</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -12,11 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Empowered.ApplicationConfiguration" Version="1.1.1" />
     <PackageReference Include="Ninject" Version="3.3.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Empowered.DependencyInjection\Empowered.ApplicationConfiguration.csproj" />
   </ItemGroup>
 
 </Project>

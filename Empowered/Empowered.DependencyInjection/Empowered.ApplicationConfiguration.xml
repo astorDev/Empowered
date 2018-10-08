@@ -82,6 +82,7 @@
             Creates <see cref="T:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1"/>
             inside of <see cref="M:Empowered.ApplicationConfiguration.ApplicationBuilder.UseSubcontractor``2(``1,System.Func{Empowered.ApplicationConfiguration.ApplicationBuildingTurn{``1},``0})"/> factoryMethod
             </summary>
+            <param name="myTurn"></param>
         </member>
         <member name="M:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1.UseSubcontractor``1(System.Func{Empowered.ApplicationConfiguration.ApplicationBuildingTurn{`0},``0})">
             <summary>

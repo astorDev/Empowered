@@ -23,8 +23,8 @@ namespace Empowered.ApplicationConfiguration.Ninjecting
 		/// <summary>
 		/// Creates new <see cref="NinjectedApplicationBuilder{TBuilder}"/>
 		/// </summary>
-		/// <param name="builder"></param>
-		internal protected NinjectedApplicationBuilder(ApplicationBuildingTurn<KernelServiceProviderWrapper> turn) : base(turn)
+		/// <param name="turn"></param>
+		public NinjectedApplicationBuilder(ApplicationBuildingTurn<KernelServiceProviderWrapper> turn) : base(turn)
 		{
 		}
 

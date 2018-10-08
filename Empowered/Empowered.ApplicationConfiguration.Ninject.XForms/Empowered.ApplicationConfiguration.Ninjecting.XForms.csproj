@@ -2,12 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Astor</Authors>
+    <Company>Astor</Company>
+    <Description>Extensions in application building for injecting xamarin forms services</Description>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Empowered.DependencyInjection.Ninject\Empowered.ApplicationConfiguration.Ninjecting.csproj" />
-    <ProjectReference Include="..\Empowered.DependencyInjection\Empowered.ApplicationConfiguration.csproj" />
-    <ProjectReference Include="..\Empowered.UI.Native.Xamarin\Empowered.UI.Native.XForms.csproj" />
+    <PackageReference Include="Empowered.ApplicationConfiguration.Ninjecting" Version="1.0.1" />
+    <PackageReference Include="Empowered.UI.Native.XForms" Version="1.0.1" />
   </ItemGroup>
 
 </Project>
