@@ -21,7 +21,7 @@ namespace Empowered.ApplicationConfiguration
 		/// inside of <see cref="ApplicationBuilder.UseSubcontractor{TBuilder, TProvider}(TProvider, Func{ApplicationBuildingTurn{TProvider}, TBuilder})"/> factoryMethod
 		/// </summary>
 		/// <param name="builder"></param>
-		internal protected InitializedApplicationBuilder(ApplicationBuildingTurn<TProvider> myTurn)
+		public InitializedApplicationBuilder(ApplicationBuildingTurn<TProvider> myTurn)
 		{
 			this.chainedServiceProvider = myTurn.ChainedProvider;
 			this.Provider = myTurn.TurnProvider;

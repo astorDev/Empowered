@@ -4,8 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Astor</Authors>
     <Product>Empowered</Product>
-    <Description>Library containing basic platform/library-independent classes for performing dependency injection-based application building with support of using few independent serviceproviders for chained resolvment of dependencies.</Description>
-    <Version>1.0.3</Version>
+    <Description>Library containing basic platform/library-independent classes for performing dependency injection-based application building. Supports use of few chained service providers.</Description>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
