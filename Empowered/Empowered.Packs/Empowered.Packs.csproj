@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Astor</Authors>
+    <Company>Astor</Company>
+    <Description>Helpful collections-oriented extensions</Description>
   </PropertyGroup>
 
 </Project>
