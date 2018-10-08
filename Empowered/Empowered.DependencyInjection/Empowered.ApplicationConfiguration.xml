@@ -6,14 +6,12 @@
     <members>
         <member name="T:Empowered.ApplicationConfiguration.ApplicationBuilder">
             <summary>
-            Builds dependency injection 
-            with help of <see cref="T:Empowered.ApplicationConfiguration.ChainedServiceProvider"/>
+            Builder of dependency-injection based application. 
             </summary>
         </member>
         <member name="M:Empowered.ApplicationConfiguration.ApplicationBuilder.#ctor">
             <summary>
-            Creates new <see cref="T:Empowered.ApplicationConfiguration.ApplicationBuilder"/>
-            which should be used as starting point for dependency injection based app configuration
+            Creates new <see cref="T:Empowered.ApplicationConfiguration.ApplicationBuilder"/>. Which is starting point of app building.
             </summary>
         </member>
         <member name="M:Empowered.ApplicationConfiguration.ApplicationBuilder.AddServiceProvider``1(``0)">
@@ -24,16 +22,23 @@
             <param name="serviceProvider"></param>
             <returns></returns>
         </member>
-        <member name="M:Empowered.ApplicationConfiguration.ApplicationBuilder.UseSubcontractor``2(``1,System.Func{Empowered.ApplicationConfiguration.ApplicationBuilder,``0})">
+        <member name="M:Empowered.ApplicationConfiguration.ApplicationBuilder.UseSubcontractor``2(``1,System.Func{Empowered.ApplicationConfiguration.ApplicationBuildingTurn{``1},``0})">
             <summary>
-            Passes application building to specified <typeparamref name="TBuilder"/>
-            created by <paramref name="factoryMethod"/> utilizing specified <typeparamref name="TProvider"/>
+            Passes application building to specified <see cref="T:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1"/>
+            adding specified <paramref name="provider"/> to providers chain
             </summary>
             <typeparam name="TBuilder"></typeparam>
             <typeparam name="TProvider"></typeparam>
             <param name="provider"></param>
             <param name="factoryMethod"></param>
             <returns></returns>
+        </member>
+        <member name="T:Empowered.ApplicationConfiguration.ApplicationBuildingTurn`1">
+            <summary>
+            Contains objects which should be passed when
+            passing application building to next builder.
+            </summary>
+            <typeparam name="TProvider"></typeparam>
         </member>
         <member name="T:Empowered.ApplicationConfiguration.ChainedServiceProvider">
             <summary>
@@ -65,27 +70,22 @@
             <see cref="T:Empowered.ApplicationConfiguration.ApplicationBuilder"/> implementation
             ready for <see cref="T:System.IServiceProvider"/> creation
             </summary>
-            <typeparam name="TMyProvider"></typeparam>
+            <typeparam name="TProvider"></typeparam>
         </member>
         <member name="F:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1.Provider">
             <summary>
             provider for dependency injection
             </summary>
         </member>
-        <member name="M:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1.#ctor(Empowered.ApplicationConfiguration.ApplicationBuilder)">
+        <member name="M:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1.#ctor(Empowered.ApplicationConfiguration.ApplicationBuildingTurn{`0})">
             <summary>
             Creates <see cref="T:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1"/>
-            from previous <see cref="T:Empowered.ApplicationConfiguration.ApplicationBuilder"/> passing turn with required <see cref="T:System.IServiceProvider"/>
-            <para></para>
-            Note: that method should only be used within 
-            <see cref="M:Empowered.ApplicationConfiguration.ApplicationBuilder.UseSubcontractor``2(``1,System.Func{Empowered.ApplicationConfiguration.ApplicationBuilder,``0})"/>
-            factory method
+            inside of <see cref="M:Empowered.ApplicationConfiguration.ApplicationBuilder.UseSubcontractor``2(``1,System.Func{Empowered.ApplicationConfiguration.ApplicationBuildingTurn{``1},``0})"/> factoryMethod
             </summary>
-            <param name="builder"></param>
         </member>
-        <member name="M:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1.UseSubcontractor``1(System.Func{Empowered.ApplicationConfiguration.ApplicationBuilder,``0})">
+        <member name="M:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1.UseSubcontractor``1(System.Func{Empowered.ApplicationConfiguration.ApplicationBuildingTurn{`0},``0})">
             <summary>
-            passes application building to next <see cref="T:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1"/>
+            Passes application building to next <see cref="T:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1"/>
             which uses same provider as this builder
             </summary>
             <typeparam name="TBuilder"></typeparam>
@@ -94,8 +94,7 @@
         </member>
         <member name="M:Empowered.ApplicationConfiguration.InitializedApplicationBuilder`1.CreateServiceProvider">
             <summary>
-            Returns built service provider.
-            Essentially returns passed through <see cref="T:Empowered.ApplicationConfiguration.ChainedServiceProvider"/>
+            Returns service provider chaining all configured inner providers
             </summary>
             <returns></returns>
         </member>
