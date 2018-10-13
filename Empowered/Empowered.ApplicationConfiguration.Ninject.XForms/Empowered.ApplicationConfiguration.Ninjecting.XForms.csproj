@@ -5,7 +5,7 @@
     <Authors>Astor</Authors>
     <Company>Astor</Company>
     <Description>Extensions in application building for injecting xamarin forms services</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
