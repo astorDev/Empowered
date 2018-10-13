@@ -11,17 +11,9 @@ using Xamarin.Forms.Mocks;
 namespace Tests.Empowered.ApplicationConfiguration.Ninjecting.XForms
 {
 	[TestClass]
-	public class ApplicationBuilder_WithXFormsServices_Should
+	public class ApplicationBuilder_WithXFormsServices_Should : ApplicationBuilder_WithXForms_Tests
 	{
-		protected readonly INavigationBindings bindings = A.Fake<INavigationBindings>();
-		protected readonly IXFormsServicesConfiguration configuration = A.Fake<IXFormsServicesConfiguration>();
 
-		[TestInitialize]
-		public void StartApp()
-		{
-			MockForms.Init();
-			Application.Current = new App();
-		}
 
 		[TestMethod]
 		public void SetCorrectMainPage_OnStartApp()
